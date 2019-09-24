@@ -1,37 +1,56 @@
-<h1>Burgers!</h1>
+<div class="content">
+    <div class="content1">
 
-<h2>Menu</h2>
 
-<ul>
-    {{#each burgers}}
-    {{#unless devoured}}
-    {{> burgers/burger-block devoured=true}}
-    {{/unless}}
-    {{/each}}
-</ul>
+        <h1 class="title">Create Your Own Burger!</h1>
 
-<h2>Cart</h2>
-<ul>
-    {{#each burgers}}
-    {{#if devoured}}
-    {{> burgers/burger-block devoured=false}}
-    {{/if}}
-    {{/each}}
-</ul>
-
-<h2>Custom Burger</h2>
-<form class="create-form">
-
-    <div class="form-group">
-        <label for="burger">Burger Name:</label>
-        <input type="text" id="burger" name="name">
     </div>
 
-    <div class="form-group">
-        <label for="devoured">Add to cart?</label><br>
-        <input type="radio" name="devoured" value="1" checked> Yes<br>
-        <input type="radio" name="devoured" value="0"> No
+    <div class="content2">
+        <div class="menu">
+            <h2 class="sub-title">Menu</h2>
+
+            <ul>
+                {{#each burgers}}
+                {{#unless devoured}}
+                {{> burgers/burger-block devoured=true}}
+                {{/unless}}
+                {{/each}}
+            </ul>
+        </div>
     </div>
 
-    <button type="submit">Add Burger</button>
-</form>
+    <div class="content3">
+        <div class="burger-form">
+            <h2 class="sub-title">Custom Burger</h2>
+            <form class="create-form">
+
+                <div class="form-group">
+                    <label for="burger">Burger Name:</label>
+                    <input type="text" id="burger" name="name">
+                </div>
+
+                <div class="form-group">
+                    <label for="devoured">Add to cart?</label><br>
+                    <input type="radio" name="devoured" value="1" checked> Yes<br>
+                    <input type="radio" name="devoured" value="0"> No
+                </div>
+
+                <button class="main-btn" type="submit">Add Burger</button>
+            </form>
+        </div>
+
+        <div class="cart">
+            <h2 class="sub-title">Cart</h2>
+            <ul>
+                {{#each burgers}}
+                {{#if devoured}}
+                {{> burgers/burger-block devoured=false}}
+                {{/if}}
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+
+</div>
+<div class="background-img"></div>
